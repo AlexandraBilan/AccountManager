@@ -14,7 +14,7 @@ namespace AccountManager
             get
             {
                 int totalSalary = 0;
-                foreach(var employee in _employees)
+                foreach (var employee in _employees)
                 {
                     totalSalary += employee.Salary;
                 }
@@ -51,10 +51,15 @@ namespace AccountManager
             _employees.Add(newEmployee);
         }
 
+        private Employee search(string name, string midname, string surname)
+        {
+            return _employees.Single(emp => emp.Name == name && emp.Midname == midname && emp.Surname == surname);
+        }
+
         public void deleteEmployee(string name, string midname, string surname)
         {
-            var employeeToDelete = _employees.Single(emp => emp.Name == name && emp.Midname == midname && emp.Surname == surname);
-            _employees.Remove(employeeToDelete);
+            var employerToDelete = search(name, midname, surname);
+            _employees.Remove(employerToDelete);
         }
 
         public void deleteEmployee(Employee employeeToDelete)
@@ -64,8 +69,8 @@ namespace AccountManager
 
         public void changeSalary(string name, string midname, string surname, int salary)
         {
-            var employeeToChange = _employees.Single(emp => emp.Name == name && emp.Midname == midname && emp.Surname == surname);
-            employeeToChange.Salary = salary;
+            var employerToChange = search(name, midname, surname);
+            employerToChange.Salary = salary;
         }
 
 

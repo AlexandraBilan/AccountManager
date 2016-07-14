@@ -10,16 +10,18 @@ namespace AccountManager
 {
     static class SaveLoadHelper
     {
+        public static string file = "DB.json";
+        
         public static void save(List<Employee> emp)
         {
             string json = JsonConvert.SerializeObject(emp);
 
-            File.WriteAllText("DB.json", json);
+            File.WriteAllText(file, json);
         }
 
         public static List<Employee> load()
         {
-            return JsonConvert.DeserializeObject<List<Employee>>(File.ReadAllText("DB.json"));
+            return JsonConvert.DeserializeObject<List<Employee>>(File.ReadAllText(file));
         }
     }
 }

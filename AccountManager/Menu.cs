@@ -118,7 +118,7 @@ namespace AccountManager
 
         private List<Employee> load()
         {
-            return SaveLoadHelper.load();          
+            return SaveLoadHelper.load();
         }
 
         private void total()
