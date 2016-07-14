@@ -79,7 +79,7 @@ namespace AccountManager
         {
             foreach (var emp in _staff.Employees)
             {
-                Console.WriteLine("{0} {1} {2} имеет зарплату в {3} рублей.", emp._name, emp._midname, emp._surname, emp.Salary);
+                Console.WriteLine("{0} {1} {2} имеет зарплату в {3} рублей.", emp.Name, emp.Midname, emp.Surname, emp.Salary);
             }
         }
 

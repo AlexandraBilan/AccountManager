@@ -53,7 +53,7 @@ namespace AccountManager
 
         public void deleteEmployee(string name, string midname, string surname)
         {
-            var employeeToDelete = _employees.Single(emp => emp._name == name && emp._midname == midname && emp._surname == surname);
+            var employeeToDelete = _employees.Single(emp => emp.Name == name && emp.Midname == midname && emp.Surname == surname);
             _employees.Remove(employeeToDelete);
         }
 
@@ -64,7 +64,7 @@ namespace AccountManager
 
         public void changeSalary(string name, string midname, string surname, int salary)
         {
-            var employeeToChange = _employees.Single(emp => emp._name == name && emp._midname == midname && emp._surname == surname);
+            var employeeToChange = _employees.Single(emp => emp.Name == name && emp.Midname == midname && emp.Surname == surname);
             employeeToChange.Salary = salary;
         }
 
